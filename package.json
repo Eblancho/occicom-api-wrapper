@@ -1,0 +1,22 @@
+{
+    "name": "occicom-api-wrapper",
+    "version": "1.0.0",
+    "description": "JS wrapper for Occicom API",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Eblancho/occicom-api-wrapper.git"
+    },
+    "author": "EBlanchon",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Eblancho/occicom-api-wrapper/issues"
+    },
+    "homepage": "https://github.com/Eblancho/occicom-api-wrapper#readme",
+    "dependencies": {
+        "axios": "^0.21.1"
+    }
+}
