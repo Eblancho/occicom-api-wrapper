@@ -1,7 +1,5 @@
 const API = require('./API/index.js');
-const Status = require('./Status/index.js');/*
-const Menu = require('./Menu/index.js');
-const Dashboard = require('./Dashboard/index.js');
+const Dashboard = require('./Dashboard/index.js');/*
 const Calls = require('./Calls/index.js');
 const Voicemail = require('./Voicemail/index.js');
 const DialGroups = require('./DialGroups/index.js');
@@ -15,9 +13,8 @@ class OccicomAPI {
     constructor(version) {
         this.API = new API("https://extranet.occicom.fr/api/voip/" + (version ? version : "v1") + "/");
 
-        this.Status = new Status(this.API);/*
-        this.Menu = new Menu(this.API);
         this.Dashboard = new Dashboard(this.API);
+        /*
         this.Calls = new Calls(this.API);
         this.Voicemail = new Voicemail(this.API);
         this.DialGroups = new DialGroups(this.API);
