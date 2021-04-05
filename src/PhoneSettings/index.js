@@ -5,7 +5,7 @@ class PhoneSettings {
 
     getSIPAccounts(user_id) {
         return new Promise(async (resolve, reject) => {
-            this.GET.post("phoneSettings/provisioning/" + user_id, true).then((response) => {
+            this.API.get("phoneSettings/provisioning/" + user_id).then((response) => {
                 const user_info = response.data.header.user;
 
                 resolve({
@@ -25,7 +25,7 @@ class PhoneSettings {
 
     getDIDNumbers(user_id) {
         return new Promise(async (resolve, reject) => {
-            this.GET.post("phoneSettings/callerNumbers/" + user_id, true).then((response) => {
+            this.API.get("phoneSettings/callerNumbers/" + user_id).then((response) => {
                 const user_info = response.data.header.user;
 
                 resolve({

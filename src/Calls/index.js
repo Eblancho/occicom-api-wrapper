@@ -10,7 +10,7 @@ class Calls {
             this.API.post("appData/user/auth", {
                 "sipExtension": sipExtension,
                 "calledNum" : calledNum,
-            }, true).then((response) => {
+            }).then((response) => {
                 resolve({
                     success: true
                 })
