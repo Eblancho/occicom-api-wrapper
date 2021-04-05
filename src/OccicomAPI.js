@@ -11,8 +11,10 @@ const Directory = require('./Directory/index.js');
 const Users = require('./Users/index.js');*/
 
 class OccicomAPI {
-    constructor(version) {
+    constructor(version, token, user_id) {
         this.API = new API("https://extranet.occicom.fr/api/voip/" + (version ? version : "v1") + "/");
+        this.API.token = token ? token : null;
+        this.API.user_id = user_id ? user_id : null;
 
         this.Dashboard = new Dashboard(this.API);
         this.Calls = new Calls(this.API);

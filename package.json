@@ -1,6 +1,6 @@
 {
     "name": "occicom-api-wrapper",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "JS wrapper for Occicom API",
     "main": "index.js",
     "scripts": {
