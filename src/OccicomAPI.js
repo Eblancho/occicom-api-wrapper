@@ -1,10 +1,11 @@
 const API = require('./API/index.js');
-const Dashboard = require('./Dashboard/index.js');/*
+const Dashboard = require('./Dashboard/index.js');
 const Calls = require('./Calls/index.js');
+/*
 const Voicemail = require('./Voicemail/index.js');
 const DialGroups = require('./DialGroups/index.js');
-const IVR = require('./IVR/index.js');
-const PhoneSettings = require('./PhoneSettings/index.js');*/
+const IVR = require('./IVR/index.js');*/
+const PhoneSettings = require('./PhoneSettings/index.js');
 const AppData = require('./AppData/index.js');/*
 const Directory = require('./Directory/index.js');
 const Users = require('./Users/index.js');*/
@@ -14,12 +15,12 @@ class OccicomAPI {
         this.API = new API("https://extranet.occicom.fr/api/voip/" + (version ? version : "v1") + "/");
 
         this.Dashboard = new Dashboard(this.API);
-        /*
         this.Calls = new Calls(this.API);
+        /*
         this.Voicemail = new Voicemail(this.API);
         this.DialGroups = new DialGroups(this.API);
-        this.IVR = new IVR(this.API);
-        this.PhoneSettings = new PhoneSettings(this.API);*/
+        this.IVR = new IVR(this.API);*/
+        this.PhoneSettings = new PhoneSettings(this.API);
         this.AppData = new AppData(this.API);/*
         this.Directory = new Directory(this.API);
         this.Users = new Users(this.API);*/
@@ -36,13 +37,22 @@ class OccicomAPI {
                 if (response.success) {
                     this.API.token = response.token;
                     this.API.user_id = response.user_id;
-                    resolve(true);
+                    resolve({
+                        success: true,
+                        token: response.token,
+                        user_id: response.user_id
+                    });
                 }
                 else {
-                    resolve(false);
+                    resolve({
+                        success: false
+                    });
                 }
             }).catch((error) => {
-                reject(error);
+                reject({
+                    success: false,
+                    error: error
+                });
             });
         });
     }

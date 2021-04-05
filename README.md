@@ -29,7 +29,7 @@ API.login("e@mail.com", "OTP").then((loginResponse) => {
 - [ ] Menu items (only returns information from the swagger, so useless for the moment)
 - [x] Dashboard
 - [ ] Calls get the list of call log
-- [ ] Calls Initiates a new call
+- [x] Calls Initiates a new call (makeCall)
 - [ ] Voicemail get the list of voice mail
 - [ ] Voicemail get a voice mail
 - [ ] Voicemail erase a voice mail
@@ -51,11 +51,12 @@ API.login("e@mail.com", "OTP").then((loginResponse) => {
 - [ ] IVR get the Holidays
 - [ ] IVR add a new holiday
 - [ ] IVR deletes an existing holiday
-- [ ] Phone settings get the list of available SIP accounts for the softphone
-- [ ] Phone settings get the list of available did numbers for the SIP account
-- [ ] Application Data Authentication
+- [x] Phone settings get the list of available SIP accounts for the softphone (getSIPAccounts)
+- [x] Phone settings get the list of available did numbers for the SIP account (getDIDNumbers)
+- [x] Application Data Authentication (auth)
+- [x] Application Data Send OTP (sendOTP)
 - [ ] Application Data Logout
-- [ ] Application Data Lost password
+- [x] Application Data Lost password (sendLostPassword)
 - [ ] Application Data get the list of application specific data
 - [ ] Application Data set User Pic
 - [ ] Application Data checkVersion
