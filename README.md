@@ -7,7 +7,7 @@
 $ npm install --save occicom-api-wrapper
 ```
 
-## Usage, retrieve gear, guild and MM+ score from current season
+## Initialisation
 ```js
 const OccicomAPI = require("occicom-api-wrapper");
 
