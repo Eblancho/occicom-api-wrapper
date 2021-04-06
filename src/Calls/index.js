@@ -4,8 +4,6 @@ class Calls {
     }
 
     makeCall(sipExtension, calledNum) {
-        domain = domain ? domain : "occicom";
-
         return new Promise(async (resolve, reject) => {
             this.API.post("appData/user/auth", {
                 "sipExtension": sipExtension,
