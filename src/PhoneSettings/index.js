@@ -6,12 +6,10 @@ class PhoneSettings {
     getSIPAccounts(user_id) {
         return new Promise(async (resolve, reject) => {
             this.API.get("phoneSettings/provisioning/" + user_id).then((response) => {
-                const user_info = response.data.header.user;
-
                 resolve({
-                    user: response.data.header.user,
-                    SIPAccounts: response.data.SIPAccounts,
-                    SIPTransport: response.data.SIPTransport,
+                    user: response.header.user,
+                    SIPAccounts: response.SIPAccounts,
+                    SIPTransport: response.SIPTransport,
                     success: true
                 })
             }).catch((error) => {
@@ -26,11 +24,9 @@ class PhoneSettings {
     getDIDNumbers(user_id) {
         return new Promise(async (resolve, reject) => {
             this.API.get("phoneSettings/callerNumbers/" + user_id).then((response) => {
-                const user_info = response.data.header.user;
-
                 resolve({
-                    user: response.data.header.user,
-                    callerNumbers: response.data.callerNumbers,
+                    user: response.header.user,
+                    callerNumbers: response.callerNumbers,
                     success: true
                 })
             }).catch((error) => {
