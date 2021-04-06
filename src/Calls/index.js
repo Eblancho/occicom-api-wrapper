@@ -5,7 +5,7 @@ class Calls {
 
     makeCall(sipExtension, calledNum) {
         return new Promise(async (resolve, reject) => {
-            this.API.post("appData/user/auth", {
+            this.API.post("calls/" + sipExtension + "/makeCall", {
                 "sipExtension": sipExtension,
                 "calledNum" : calledNum,
             }).then((response) => {
