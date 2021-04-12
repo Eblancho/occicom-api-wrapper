@@ -6,9 +6,9 @@ const Voicemail = require('./Voicemail/index.js');
 const DialGroups = require('./DialGroups/index.js');
 const IVR = require('./IVR/index.js');*/
 const PhoneSettings = require('./PhoneSettings/index.js');
-const AppData = require('./AppData/index.js');/*
+const AppData = require('./AppData/index.js');
 const Directory = require('./Directory/index.js');
-const Users = require('./Users/index.js');*/
+const Users = require('./Users/index.js');
 
 class OccicomAPI {
     constructor(version, token, user_id) {
@@ -23,9 +23,9 @@ class OccicomAPI {
         this.DialGroups = new DialGroups(this.API);
         this.IVR = new IVR(this.API);*/
         this.PhoneSettings = new PhoneSettings(this.API);
-        this.AppData = new AppData(this.API);/*
+        this.AppData = new AppData(this.API);
         this.Directory = new Directory(this.API);
-        this.Users = new Users(this.API);*/
+        this.Users = new Users(this.API);
     }
 
     login(mail, otp, password, domain, language) {
