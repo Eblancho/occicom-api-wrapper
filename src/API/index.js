@@ -65,17 +65,15 @@ class API {
         });
     }
 
-    patch(url, data, noAuth) {
+    patch(url) {
         return new Promise(async (resolve, reject) => {
             let headers = { headers: { 'Authorization': this.token }};
-            if (noAuth) {
-                headers = null;
-            }
-            else if (this.token == null) {
+            
+            if (this.token == null) {
                 reject(new Error("No token"));
             }
     
-            axios.patch(this.getURL(url), data, headers).then(response => {
+            axios.patch(this.getURL(url), headers).then(response => {
                 resolve(response.data);
             }).catch((error) => {
                 reject(error);
@@ -83,17 +81,15 @@ class API {
         });
     }
 
-    delete(url, data, noAuth) {
+    delete(url) {
         return new Promise(async (resolve, reject) => {
             let headers = { headers: { 'Authorization': this.token }};
-            if (noAuth) {
-                headers = null;
-            }
-            else if (this.token == null) {
+            
+            if (this.token == null) {
                 reject(new Error("No token"));
             }
     
-            axios.delete(this.getURL(url), data, headers).then(response => {
+            axios.delete(this.getURL(url), headers).then(response => {
                 resolve(response.data);
             }).catch((error) => {
                 reject(error);
