@@ -25,8 +25,8 @@ class Voicemail {
         return this.API.get(this.baseGreetings + sipExtension + "/" + page + "/" + number + "/");
     }
 
-    getGreeting(id) {
-        return this.API.get(this.baseGreetings + id);
+    getGreetingFileURL(id) {
+        return new URL(this.baseGreetings + id, this.API.baseUrl).toString();
     }
 
     deleteGreeting(id) {
