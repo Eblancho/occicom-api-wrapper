@@ -7,13 +7,17 @@ class API {
         this.user_id = null;
     }
 
-    get(url, noAuth) {
+    get(url, noAuth, blob) {
         return new Promise(async (resolve, reject) => {
             let headers = { headers: { 'Authorization': this.token }};
+
+            if (blob) {
+                headers.responseType = 'blob';
+            }
+
             if (noAuth) {
                 headers = null;
             }
-    
             else if (this.token == null) {
                 reject(new Error("No token"));
             }
@@ -65,7 +69,7 @@ class API {
         });
     }
 
-    patch(url) {
+    patch(url, data) {
         return new Promise(async (resolve, reject) => {
             let headers = { headers: { 'Authorization': this.token }};
             
@@ -73,7 +77,7 @@ class API {
                 reject(new Error("No token"));
             }
     
-            axios.patch(this.getURL(url), headers).then(response => {
+            axios.patch(this.getURL(url), data, headers).then(response => {
                 resolve(response.data);
             }).catch((error) => {
                 reject(error);
