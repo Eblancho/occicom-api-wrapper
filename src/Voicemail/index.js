@@ -10,7 +10,7 @@ class Voicemail {
     }
 
     getMessage(id) {
-        return this.API.get(this.baseMessages + id);
+        return this.API.get(this.baseMessages + id, false, true);
     }
 
     deleteMessage(id) {
