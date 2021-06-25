@@ -85,6 +85,22 @@ class API {
         });
     }
 
+    put(url, data) {
+        return new Promise(async (resolve, reject) => {
+            let headers = { headers: { 'Authorization': this.token }};
+            
+            if (this.token == null) {
+                reject(new Error("No token"));
+            }
+    
+            axios.put(this.getURL(url), data, headers).then(response => {
+                resolve(response.data);
+            }).catch((error) => {
+                reject(error);
+            });
+        });
+    }
+
     delete(url) {
         return new Promise(async (resolve, reject) => {
             let headers = { headers: { 'Authorization': this.token }};

@@ -1,6 +1,7 @@
 const API = require('./API/index.js');
 const Dashboard = require('./Dashboard/index.js');
 const Calls = require('./Calls/index.js');
+const CallForwards = require('./CallForwards/index.js');
 const Voicemail = require('./Voicemail/index.js');/*
 const DialGroups = require('./DialGroups/index.js');
 const IVR = require('./IVR/index.js');*/
@@ -17,6 +18,7 @@ class OccicomAPI {
 
         this.Dashboard = new Dashboard(this.API);
         this.Calls = new Calls(this.API);
+        this.CallForwards = new CallForwards(this.API);
         this.Voicemail = new Voicemail(this.API);
         /*this.DialGroups = new DialGroups(this.API);
         this.IVR = new IVR(this.API);*/
